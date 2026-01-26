@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初めてのブログ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+    <script src="https://esm.sh/css-doodle/css-doodle.min.js?raw"></script>
+    <style>
+        :root { --accent: #ff4a4a; --bg: #0a0c27; }
+        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        .background { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+        .inseki-container { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+        .inseki::before { content: ""; position: absolute; top: -4px; left: -4px; width: 4px; height: 4px; background: transparent; box-shadow: 64px 4px 0 rgb(199, 0, 0), 48px 8px 0 rgb(255, 90, 0), 60px 8px 0 rgb(199, 0, 0), 32px 12px 0 rgb(235, 255, 37), 44px 12px 0 rgb(255, 90, 0), 56px 12px 0 rgb(199, 0, 0), 28px 16px 0 rgb(238, 255, 0), 40px 16px 0 rgb(255, 90, 0), 24px 20px 0 rgb(238, 255, 0), 48px 20px 0 rgb(199, 0, 0), 60px 20px 0 rgb(255, 75, 0), 32px 24px 0 rgb(255, 90, 0), 44px 24px 0 rgb(179, 0, 0), 56px 24px 0 rgb(255, 75, 0), 16px 28px 0 rgb(238, 255, 0), 28px 28px 0 rgb(255, 102, 0), 40px 28px 0 rgb(179, 0, 0), 52px 28px 0 rgb(255, 75, 0), 12px 32px 0 rgb(238, 255, 0), 24px 32px 0 rgb(255, 102, 0), 36px 32px 0 rgb(179, 0, 0), 12px 36px 0 rgb(133, 0, 0), 16px 36px 0 rgb(97, 39, 0), 20px 36px 0 rgb(133, 0, 0), 24px 36px 0 rgb(133, 0, 0), 32px 36px 0 rgb(179, 0, 0), 44px 36px 0 rgb(255, 75, 0), 56px 36px 0 rgb(235, 255, 37), 8px 40px 0 rgb(97, 39, 0), 12px 40px 0 rgb(97, 39, 0), 16px 40px 0 rgb(133, 0, 0), 20px 40px 0 rgb(133, 0, 0), 24px 40px 0 rgb(97, 39, 0), 28px 40px 0 rgb(97, 39, 0), 40px 40px 0 rgb(255, 75, 0), 52px 40px 0 rgb(235, 255, 37), 4px 44px 0 rgb(97, 39, 0), 8px 44px 0 rgb(97, 39, 0), 12px 44px 0 rgb(97, 39, 0), 16px 44px 0 rgb(97, 39, 0), 20px 44px 0 rgb(97, 39, 0), 24px 44px 0 rgb(133, 0, 0), 28px 44px 0 rgb(133, 0, 0), 32px 44px 0 rgb(97, 39, 0), 36px 44px 0 rgb(255, 75, 0), 48px 44px 0 rgb(235, 255, 37), 4px 48px 0 rgb(82, 16, 0), 8px 48px 0 rgb(82, 16, 0), 12px 48px 0 rgb(97, 39, 0), 16px 48px 0 rgb(97, 39, 0), 20px 48px 0 rgb(97, 39, 0), 24px 48px 0 rgb(97, 39, 0), 28px 48px 0 rgb(133, 0, 0), 32px 48px 0 rgb(97, 39, 0), 4px 52px 0 rgb(51, 10, 0), 8px 52px 0 rgb(82, 16, 0), 12px 52px 0 rgb(82, 16, 0), 16px 52px 0 rgb(97, 39, 0), 20px 52px 0 rgb(97, 39, 0), 24px 52px 0 rgb(97, 39, 0), 28px 52px 0 rgb(97, 39, 0), 32px 52px 0 rgb(133, 0, 0), 40px 52px 0 rgb(235, 255, 37), 4px 56px 0 rgb(51, 10, 0), 8px 56px 0 rgb(51, 10, 0), 12px 56px 0 rgb(82, 16, 0), 16px 56px 0 rgb(82, 16, 0), 20px 56px 0 rgb(97, 39, 0), 24px 56px 0 rgb(97, 39, 0), 28px 56px 0 rgb(97, 39, 0), 32px 56px 0 rgb(97, 39, 0), 36px 56px 0 rgb(235, 255, 37), 8px 60px 0 rgb(51, 10, 0), 12px 60px 0 rgb(51, 10, 0), 16px 60px 0 rgb(82, 16, 0), 20px 60px 0 rgb(82, 16, 0), 24px 60px 0 rgb(97, 39, 0), 28px 60px 0 rgb(97, 39, 0), 12px 64px 0 rgb(51, 10, 0), 16px 64px 0 rgb(51, 10, 0), 20px 64px 0 rgb(82, 16, 0), 24px 64px 0 rgb(97, 39, 0); }
+        .animated { animation: inseki 3s infinite linear; }
+        @keyframes inseki { 0% { transform: translate(800px,-300px) scale(1,1) rotate(0deg) skew(0deg,0deg); opacity: 1.0; } 20% { transform: translate(500px,0px) scale(1.25,1.25) rotate(0deg) skew(1.5deg,1.5deg); opacity: 1.0; } 40% { transform: translate(200px,300px) scale(1.5,1.5) rotate(0deg) skew(3deg,3deg); opacity: 1.0; } 100% { transform: translate(-700px,1200px) scale(1.5,1.5) rotate(0deg) skew(3deg,3deg); opacity: 1.0; } }
+        .container { width: 95%; max-width: 900px; margin: 40px auto; position: relative; z-index: 1; }
+        .card { background: rgba(255, 74, 74, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 50px; border: 1px solid rgba(255, 0, 0, 0.25); min-height: 80vh; box-shadow: 0 10px 50px rgba(0,0,0,0.5); }
+        .post-title { font-size: 32px; color: #ff0000; margin-bottom: 5px; font-weight: bold; text-shadow: 0 0 20px rgba(255, 74, 74, 0.5); }
+        .post-date { font-size: 14px; color: #888; margin-bottom: 30px; }
+        .content { line-height: 1.8; font-size: 1.1rem; color: #eee; }
+        h2 { color: #ff4a4a; border-bottom: 2px solid rgba(255,74,74,0.3); padding-bottom: 5px; }
+        blockquote { background: rgba(255, 74, 74, 0.1); border-left: 5px solid #ff4a4a; margin: 25px 0; padding: 20px 25px; font-style: italic; border-radius: 0 10px 10px 0; }
+        img { max-width: 100%; border-radius: 10px; margin: 10px 0; }
+        .footer { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,74,74,0.1); text-align: center; }
+        .btn-home { display: inline-block; background: #ff0000; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) { .card { padding: 25px; } .post-title { font-size: 24px; } }
+    </style>
+</head>
+<body>
+    <css-doodle class="background"><style>@grid: 1 / 100vw 100vh / #0a0c27; background-size: 200px 200px; background-image: @doodle(@grid: 6 / 100%; @size: 4px; font-size: 4px; color: hsl(@r240, 30%, 50%); box-shadow: @m3x5(calc(4em - @nx * 1em) calc(@ny * 1em) @p(@m3(currentColor), @m2(transparent)), calc(2em + @nx * 1em) calc(@ny * 1em) @lp)););</style></css-doodle>
+    <div class="inseki-container"><div class="animated inseki"></div></div>
+    <div class="container">
+        <article class="card">
+            <header>
+                <div class="post-title">初めてのブログ</div>
+                <div class="post-date">2026年1月25日</div>
+                <hr style="border:0; border-top:1px solid rgba(255,0,0,0.2); margin-bottom:20px;">
+            </header>
+            <div class="content">皆さん、こんにちは。<div>どうしてあなたはこれを読んでいるのでしょう？</div><div>今のところ検索しても出てこないこのサイトをどこで知ったのですか？</div><div>これからのブログが誰かの役に立ちますように。</div></div>
+            <footer class="footer">
+                <a href="https://nattomaki10000.github.io/" class="btn-home">トップページに戻る</a>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>
